@@ -1,0 +1,447 @@
+body {
+    
+    color: var(--color);
+}
+:root{
+    --color: rgb(250, 250, 250);
+   --text-color: rgb(255, 255, 255);
+    --accent-color: rgb(4,22,40);
+   background-image: radial-gradient(#42EADDFF, #00203FFF);
+}
+
+*{  
+    margin:0;
+    padding:0;
+}
+html{
+    font-size: 12pt;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-color: white;
+}
+nav{
+    top:0;
+    position: fixed;
+    width:100%;
+    z-index: 100;
+    height: 60px;
+    border-bottom: 3px #00203FFF;
+    backdrop-filter: blur(20px); /* to make scrolling items below nav blur or invisible*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.links-container{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    background-color:transparent;
+}
+nav a{
+    font-size: large;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(249, 249, 250);
+}
+
+nav a:hover{
+    font-style: oblique;
+    font-size: larger;
+    color: rgb(6, 246, 246);
+    text-decoration: underline;
+    text-shadow: 20px solid black;
+    text-indent: 10px;
+   
+}
+nav .home-link{
+    margin-right: auto;
+    font-size: xx-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+nav svg{
+    fill: var(--text-color);
+}
+
+#sidebar-active{
+    display: none;
+}
+
+.open-sidebar-btn, .close-sidebar-btn{
+  
+    display: none;
+}
+
+@media(max-width: 541px){
+    .links-container{
+       
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: rgb(4, 22, 40);
+        box-shadow: -5px 0 5px black;
+        transition: 0.75s ease-out;
+    }
+
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-btn, .close-sidebar-btn{
+        padding: 20px;
+        display: block;
+    }
+    #sidebar-active:checked ~ .links-container{
+        right: 0;
+     }
+     #sidebar-active:checked ~ #overlay{
+       
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top:0;
+        left: 0; 
+        z-index: 9;
+     }
+}
+.home{
+    margin: 20px;
+    height: 60vh;
+    padding: 100px;
+    position: relative;
+}
+
+.home-content{
+    max-width: 600px;
+    margin: 10px 0 20px;
+    line-height: 1.2;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(27, 240, 240);
+}
+.home-content p{
+    font-size: 16px;
+}
+.home-content .btn-box{
+    display: flex;
+    width: 345px;
+    height: 50px;
+   
+}
+.btn-box a{
+    position: relative;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    font-size: 17px;
+    display: inline-flex;
+    width: 65px;
+    height: 40%;
+    background: rgb(27, 62, 66);
+    border: 2px solid rgb(25, 190, 219);
+    border-radius: 8px;
+}
+
+.btn-box a:nth-child(2){
+    background: transparent;
+
+}
+
+.btn-box a:hover::before{
+  width: 100px;
+  transition: 0.5s;
+  color: black;
+}
+.portfolio{
+    margin:20px;
+    width:80vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.main-img {
+    /* position: relative; */
+    /* margin-left: 700px;
+    margin-bottom: 1000px !important; */
+    position: absolute;
+    right: 100px;
+    bottom: 20%;
+    height: 60%;
+    border-radius: 50%;
+
+}
+.skills{
+    
+    margin:40px;
+    width:80vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of items onto multiple lines */
+    justify-content: center; /* Centers the icons horizontally */
+    align-items: center;
+    gap: 80px; /* Space between the icons */
+    margin: 10px; /* Adjust margin as needed */
+    padding:10px;
+    text-decoration-line:underline;
+    text-overflow: ellipsis;
+    text-shadow: 10px;
+    text-decoration-color: rgb(211, 201, 232);
+   margin-bottom: 10px;
+}
+
+.icons img {
+    height: 100px; /* Ensure all icons have a consistent size */
+    width: 100px;
+    object-fit: cover; /* Keeps the aspect ratio intact */
+    border:20px rgb(64, 118, 172);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #42EADDFF;
+    
+}
+
+
+#html, #css, #javascript,#js {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family:cursive;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+    
+    
+}
+.icons text{
+    margin-bottom:40px ;
+    column-gap: 10px;
+    text-decoration: double;
+    
+}
+#java{
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-weight: bolder;
+    font-display:var(--accent-color);
+    font-family:cursive;
+}
+#js {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family: cursive;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+}
+#java {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+}
+#python {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+}
+#sql {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+}
+#git {
+    display: flex;
+    flex-direction: column; /* Arrange children in a column (top to bottom) */
+    align-items: center;    /* Center align the items horizontally */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-display:var(--accent-color);
+}
+
+
+.projects{
+    
+    margin:20px;
+    width:100px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+a{
+    flex-wrap: wrap;
+    display: flex;
+    height: 200px;
+    width: 100px;
+    gap: 20px; /* Space between the icons */
+    margin: 20px; /* Adjust margin as needed */
+    padding:10px;
+    text-decoration:none;
+    flex-direction: row;
+    text-shadow: 10px;
+    color: white;
+   
+}
+
+
+.proj img{
+    gap: 20px;
+    height:100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+    
+}
+.proj a{
+    display: flex;
+    margin: 20px;
+    margin-right: 20px;
+    flex-direction: column-reverse;
+
+}
+.proj{
+    flex-wrap: wrap;
+    display: flex;
+    height: auto;
+    width:100%;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.proj .boxes {
+    width: 30%;
+
+}
+.a1 {
+    padding: 10px;
+    margin: 10px;
+    /* Adjust the border width and style */
+    border-radius: 5px; /* Optional: round the corners of the border */
+    box-shadow: 0 4px 8px #3812c033; /* Optional: add shadow for depth */
+     display: flex;
+     gap: 40px;
+     box-shadow: 0 0 10px rgba(99, 80, 245, 0.8);
+}
+.a1  p{
+    color: aqua;
+    font-size: larger;
+    text-align: left;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the right */
+    align-items: center; /* Vertically centers the content */
+    margin: 0 20px; /* Optional: Adds some margin */
+
+}
+.a2 {
+    padding: 10px;
+    margin: 10px;
+   
+    border-radius: 5px; /* Optional: round the corners of the border */
+    box-shadow: 0 4px 8px #3812c033; /* Optional: add shadow for depth */
+     display: flex;
+     gap: 40px;
+     box-shadow: 0 0 10px rgba(228, 72, 176, 0.8);
+ }
+ .a2  p{
+    color: aqua;
+     font-size: larger;
+     text-align: left;
+     flex-wrap: wrap;
+     display: flex;
+     justify-content: flex-start; /* Aligns content to the right */
+     align-items: center; /* Vertically centers the content */
+     margin: 0 20px; /* Optional: Adds some margin */
+ 
+ }
+ .a3 {
+    padding: 10px;
+    margin: 10px;
+    
+    border-radius: 5px; /* Optional: round the corners of the border */
+    box-shadow: 0 4px 8px #3812c033; /* Optional: add shadow for depth */
+     display: flex;
+     gap: 40px;
+     box-shadow: 0 0 10px rgba(99, 80, 245, 0.8);
+ }
+ .a3  p{
+    color: aqua;
+     font-size: larger;
+     text-align: left;
+     flex-wrap: wrap;
+     display: flex;
+     justify-content: flex-start; /* Aligns content to the right */
+     align-items: center; /* Vertically centers the content */
+     margin: 0 20px; /* Optional: Adds some margin */
+ 
+ }
+ .exp{
+    height: auto;
+   
+   gap:15px;
+    margin: 0 20px;
+   
+ }
+.exp1 ol{
+    width: 100%;
+    margin:30px;
+    gap:20px;
+    list-style:disc;
+    font-style: oblique;
+    color: rgb(132, 224, 224);
+    box-shadow: 0 0px 8px #3812c033;
+    border-bottom: 5px;
+}
+
+.exp1 li{
+   font-family: 'Times New Roman', Times, serif;
+   color: azure;
+   gap: 15px;
+}
+
+.achieve{
+    margin: 20px;
+}
+.achievement p{
+    margin: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    color: aqua;
+    margin-top:20px;
+}
+.sp{
+    margin: 25px;
+    text-decoration: underline;
+}
+
+
+
+
+
+
